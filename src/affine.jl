@@ -1,5 +1,5 @@
 export Affine
-
+using LinearAlgebra
 struct Affine{T <: Real} <: ConvexSet
     A::Matrix{T}
     b::Vector{T}
