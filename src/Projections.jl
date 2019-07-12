@@ -27,5 +27,5 @@ include("simplex.jl")
 include("affine.jl")
 include("consensus.jl")
 include("finite.jl")
-include("half-space.jl")
+include("halfspace.jl")
 end
