@@ -28,4 +28,5 @@ include("affine.jl")
 include("consensus.jl")
 include("finite.jl")
 include("halfspace.jl")
+include("l1ball.jl")
 end
