@@ -1,4 +1,4 @@
-export Simplex
+export Consensus
 
 struct Consensus{T <: Real} 
     index::T
