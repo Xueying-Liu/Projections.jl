@@ -1,7 +1,7 @@
 export Halfspace
 
 struct Halfspace{T <: Real} <: ConvexSet
-    a::Vector{T},
+    a::Vector{T}
     b::T
 end
 
