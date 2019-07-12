@@ -7,7 +7,7 @@ end
 
 function project!(s::Affine{T}, v::Vector{T}, y::Vector{T}) where {T <: Real}
   
-    v .= y. - inv.(s.A) .* (s.A .* y .- s.b)
+    v .= y .- pinv.(s.A) .* (s.A .* y .- s.b)
 end
 
 function project(s::Affine{<:Real}, y::Vector{<:Real})
