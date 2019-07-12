@@ -25,4 +25,5 @@ include("box.jl")
 include("ball.jl")
 include("simplex.jl")
 include("affine.jl")
+include("consensus.jl")
 end
