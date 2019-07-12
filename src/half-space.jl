@@ -5,7 +5,7 @@ struct Halfspace{T <: Real} <: ConvexSet
     b::T
 end
 
-function project!(s::Halfspace{<:Real}, v::Vector{T}, y::Vector{T}) where {T <: Real}
+function project!(s::Halfspace{T}, v::Vector{T}, y::Vector{T}) where {T <: Real}
    c = transpose(s.a)* y
   if c > s.b
     v = y -((c - s.b) / sum(abs2, s.a)) * s.a
