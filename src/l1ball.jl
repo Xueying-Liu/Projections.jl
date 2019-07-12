@@ -11,7 +11,7 @@ function project!(s::L1ball{T}, v::Vector{T}, y::Vector{T}) where {T <: Real}
    if z <= s.radius
       v = y
    else
-      p = Project(Simplex(s.radius),y)
+      p = project(Simplex(s.radius),y)
       v = s.center+sign(y-s.center).*p
    end
 end
