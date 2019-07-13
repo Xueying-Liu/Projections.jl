@@ -7,8 +7,8 @@ end
 This function projects the matrix y onto the closest matrix of rank k or less.
 ```
 function project!(s::Lowrank{<:Real}, v::Matrix{T}, y::Matrix{T}) where {T <: Real}
-    U, S, V = svd(y)
-    Z = zeros(y)
+    U, S, V = LinearAlgebra.svd(y)
+    Z = zeros(size(y))
     for j = 1:s.k
       Z = Z+S[j]*U[:,j]*V[:,j]'   
     end
