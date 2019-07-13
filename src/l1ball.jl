@@ -23,6 +23,7 @@ function project!(s::L1ball{T}, v::Vector{T}, y::Vector{T}) where {T <: Real}
             else
                 sign[i] = -1
             end
+        end
       v = s.center + transpose(sign) * w 
    end
 end
