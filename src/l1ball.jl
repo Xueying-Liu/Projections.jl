@@ -1,9 +1,16 @@
 export L1ball
 
 struct L1ball{T <: Real} <: ConvexSet
-    radius::T
     center::Vector{T}
+    radius::T
 end
+
+"""
+    
+    L1ball(c, r)
+
+A ball with center `c` and radius `r`.
+"""
 
 function project!(s::L1ball{T}, v::Vector{T}, y::Vector{T}) where {T <: Real}
     n = length(y)
