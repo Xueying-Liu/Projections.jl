@@ -15,6 +15,6 @@ function project!(s::Lowrank{<:Real}, v::Matrix{T}, y::Matrix{T}) where {T <: Re
     v = Z
 end
 
-function project(s::Lowrank{<:Real}, y::Vector{<:Real})
+function project(s::Lowrank{<:Real}, y::Matrix{<:Real})
     project!(s, similar(y), y)
 end
