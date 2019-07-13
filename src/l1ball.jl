@@ -23,7 +23,7 @@ function project!(s::L1ball{T}, v::Vector{T}, y::Vector{T}) where {T <: Real}
                 sgn[i] = -1
             end
       end
-        v = s.center .+ sgn. * w 
+        v = s.center .+ sgn .* w 
    end
 end
 
