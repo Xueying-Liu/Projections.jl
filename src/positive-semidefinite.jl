@@ -12,7 +12,7 @@ function project!(s::PositiveSemidefinite{<:Real}, v::Matrix{T}, y::Matrix{T}) w
    (D,V) = LinearAlgebra.eigen(y)
    X = zeros(size(y))
    for j = 1:size(y,1)
-      if real(D[j]) >= 0.0
+      if real(D[j]) > 0.0
          X = X .+ V[:,j] * D[j] * V[:,j]'
       end   
    end
