@@ -30,4 +30,5 @@ include("finite.jl")
 include("halfspace.jl")
 include("l1ball.jl")
 include("l_infinity.jl")
+include("low-rank-matrix.jl")
 end
