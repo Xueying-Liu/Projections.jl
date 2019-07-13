@@ -12,12 +12,22 @@ A ball with center `c` and radius `r`.
 """
 
 function project!(s::L_infinity{<:Real}, v::Vector{T}, y::Vector{T}) where {T <: Real}
-     x = y-s.center
-   if maximum(abs(x)) <= s.radius
+    n = length(y)
+    d = y-s.center
+   if maximum(abs,d) <= s.radius
       v = y
    else
-      x = max(min(x,s.radius), -s.radius)
-      v = x .+ s.center
+      sgn = zeros(n)
+      for i in 1:n
+            if d[i] > 0
+                sgn[i] = 1
+            elseif d[i] == 0
+                sgn[i] = 0
+            else
+                sgn[i] = -1
+            end
+      end  
+      v = s.center .+ s.radius.* sgn
    end
 end
 
