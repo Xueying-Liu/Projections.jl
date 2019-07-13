@@ -32,4 +32,5 @@ include("l1ball.jl")
 include("l_infinity.jl")
 include("low-rank-matrix.jl")
 include("positive-semidefinite.jl")
+include("second-order-cone.jl")
 end
