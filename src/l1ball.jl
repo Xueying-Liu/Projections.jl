@@ -18,7 +18,7 @@ function project!(s::L1ball{T}, v::Vector{T}, y::Vector{T}) where {T <: Real}
       for i in 1:n
             if d[i] > 0
                 sign[i] = 1
-            else if d[i] == 0
+            elseif d[i] == 0
                 sign[i] = 0
             else
                 sign[i] = -1
