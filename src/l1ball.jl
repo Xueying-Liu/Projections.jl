@@ -7,12 +7,23 @@ end
 Simplex() = Simplex(1.0)
 
 function project!(s::L1ball{T}, v::Vector{T}, y::Vector{T}) where {T <: Real}
+    n = length(y)
     z = sum(abs, y-s.center)
    if z <= s.radius
       v = y
    else
-      p = project(Simplex(s.radius),y)
-      v = s.center+sign(y-s.center).*p
+      w = project(Simplex(s.radius),y)
+      sign = zeros(n)
+      d = y-s.center
+      for i in 1:n
+            if d[i] > 0
+                sign[i] = 1
+            else if d[i] == 0
+                sign[i] = 0
+            else
+                sign[i] = -1
+            end
+      v = s.center + transpose(sign) * w 
    end
 end
 
