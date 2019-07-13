@@ -10,7 +10,7 @@ function project!(s::Lowrank{<:Real}, v::Matrix{T}, y::Matrix{T}) where {T <: Re
     U, S, V = LinearAlgebra.svd(y)
     Z = zeros(size(y))
     for j = 1:s.k
-      Z = Z+S[j]*U[:,j]*V[:,j]'   
+      Z = Z .+ S[j]*U[:,j]*V[:,j]'   
     end
     v = Z
 end
