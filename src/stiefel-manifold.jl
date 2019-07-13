@@ -10,6 +10,6 @@ function project!(s::Stiefel{<:Real}, v::Matrix{T}, y::Matrix{T}) where {T <: Re
     v = U*V'
 end
 
-function project(s::Simplex{<:Real}, y::Matrix{<:Real})
+function project(s::Stiefel{<:Real}, y::Matrix{<:Real})
     project!(s, similar(y), y)
 end
