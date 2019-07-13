@@ -33,4 +33,5 @@ include("l_infinity.jl")
 include("low-rank-matrix.jl")
 include("positive-semidefinite.jl")
 include("second-order-cone.jl")
+include("stiefel-manifold.jl")
 end
